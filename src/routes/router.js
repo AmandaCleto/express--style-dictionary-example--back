@@ -3,7 +3,7 @@ const app = express();
 const router = express();
 const path = require('path');
 
-const StyleDictionary = require('../index.js');
+const StyleDictionary = require('../config.js');
 
 const folderScss = path.resolve( __dirname, "..", "build", "scss");
 const filePath = `${folderScss}/_variables.scss`;

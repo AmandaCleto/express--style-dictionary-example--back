@@ -1,0 +1,4 @@
+https://github.com/amzn/style-dictionary/issues/94
+https://www.gitmemory.com/issue/amzn/style-dictionary/261/506049015
+
+source: ['src/tokens/**/*.json'],
