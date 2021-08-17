@@ -1,16 +1,21 @@
 const express = require('express');
-const app = express();
 const router = express();
 const path = require('path');
 
-const StyleDictionary = require('../config.js');
+const styleConverted = require('../index.js');
 
 const folderScss = path.resolve( __dirname, "..", "build", "scss");
-const filePath = `${folderScss}/_variables.scss`;
-
+const fileScssPath = `${folderScss}/_variables.scss`;
 router.get('/design-token/scss', function (req, res) {
-    StyleDictionary.buildAllPlatforms();
-    res.sendFile(filePath);
+    styleConverted.buildPlatform('scss');
+    res.sendFile(fileScssPath);
+})
+
+const folderLess = path.resolve( __dirname, "..", "build", "less");
+const fileLessPath = `${folderLess}/_variables.less`;
+router.get('/design-token/less', function (req, res) {
+    styleConverted.buildPlatform('less');
+    res.sendFile(fileLessPath);
 })
 
 module.exports = router;
